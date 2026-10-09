@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+    <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Projects - John Green</title>
+      <link rel="stylesheet" href="style.css">
+      <!--The below portion accesses Google Font's API for their Inter Font (think Uber)-->
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+   
+    </nav>
+      <h1>Projects</h1>
+
+      <div class="project-card">
+        <h2>Google Cloud Platform Website</h2>
+        <p>The very website that you are reading this text from is being hosted on my own personal GCP Server.</p>
+        <p>This website is a passion project because I always wanted to make my own website since I was a kid.</p>
+        <ul>
+          <li>I wanted to focus on the budget of this project as a case-scenario, so I hosted on a Google Compute Engine e2-micro VM (us-central1) running nginx, within GCP's Always Free tier with budget alerts configured to monitor usage.</li>
+          <li>Security was a big focus point of my website, which is why I secured my HTTPS from end-to-end via Cloudflare in Full SSL mode. This means my website is encrypted from visitor to Cloudflare, and from Cloudflare to the origin VM.</li>
+          <li>Self-managed infrastructure where I handle OS updates, nginx configuration, and server security directly, rather than relying on a managed platform.</li>
+        </ul>
+        <div class="image-gallery">
+          <img src="images/Machine_configurations_for_website.png" alt="This websites' machine configuarations in Google Cloud">
+          <img src="images/Website_Firewalls.png" alt="Screenshot of the firewalls configured for this website">
+          <img src="images/website_root_files.png" alt="Names of the root files that are uploaded to GCP via Secure Shell and build this website.">
+        </div>
+        
+      </div>
+
+      <div class="project-card">
+        <h2>End to End ETL Pipeline</h2>
+        <p>I like to drive, but I'm getting tired of driving on public roads. I started using Houston's public transportation system, the METRO, to get me to where I need to go and I'm loving the reliability of the transit system.</p>
+        <p>I wanted to learn more about Houston's METRO, so I decided to create an end-to-end Extract, Transform, and Load (ETL) pipeline to where the most common delays occur </p>
+        <ul>
+          <li>Extracted real-time and historical transit data from https://api.ridemetro.org/data/FullRouteInfo[?routeId] using an authenticated API key, pulling arrival times, delay reports, route data on a 5 minute basis via a scheduled GCP CloudRun job.</li>
+          <li>Built a transform layer in Python to clean and structure the raw data like handling missing timestamps, deduplicating records, standardizing route/stop IDs before loading in a GCP BigQuery dataset.</li>
+          <li>After loading into a BigQuery database, results were fed directly into the Looker Studio dashboard below for visualizing delay patterns by route and time of day.</li>
+        </ul>
+        <iframe width="600" height="450" src="https://datastudio.google.com/embed/reporting/3e3f592d-38c2-4ae9-84db-44537cd9174a/page/tPL8F" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>
+      </div>
+
+      <div class="project-card">
+        <h2>Blackjack Game</h2>
+      <p>This code uses Python programming to emmulate a game of Blackjack</p>
+      <ul>
+        <li>This project utilizes lists, randomization, and loops like the for and while loop</li>
+        <li>Future editions of this game will include a money counter to keep track of the players winnings!</li>
+        <li>Enjoy the game and good luck!</li>
+      </ul>
+
+      <div id="blackjack-game">
+      <button id="deal-btn">Deal</button>
+      <button id="hit-btn">Hit</button>
+      <button id="stand-btn">Stand</button>
+
+      <p id="user-hand"></p>
+      <p id="computer-hand"></p>
+      <p id="result"></p>
+
+</div>
+      </div>
+     
+  <script src="script.js"></script>
+  </body>
+</html>

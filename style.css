@@ -1,0 +1,91 @@
+body {
+  background-color: #2c752c;
+  color: #ffffff;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-weight: 500;
+  line-height: 1.6;
+}
+
+nav a {
+  color:bisque;
+  text-decoration: none;
+  transition: color 0.2s ease;/* The transition is there to smooth the hover ability when the mouse is over the links in the nav bar */
+}
+/* Hover is a psuedo class. Goal is to get the links to change color to show they're clickable */
+nav a:hover {
+  color: #ffffff;
+}
+
+a {
+  color: bisque;
+  text-decoration: underline;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: white;
+}
+
+/* Applying rules to list parent (ul) and not (ui) because the children will inherent */
+
+nav ul {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.hero {
+  padding: 20px 20px;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.project-card {
+  padding: 40px 20px;
+  background-color: #1f521f;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+nav {
+  margin-bottom: 40px;
+}
+/* The below code will add rules for the any list item (I'm targeting resume) to make a cleaner look */
+li {
+  margin-bottom: 10px;
+}
+
+.project-card iframe {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border: none;
+  display: block;
+}
+
+.image-gallery {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.image-gallery img {
+  width: 100%;
+  max-width: 500px;
+  border: 2px solid #1f521f;
+  border-radius: 8px;
+}
